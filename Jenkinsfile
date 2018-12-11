@@ -10,14 +10,20 @@ pipeline {
       parallel {
         stage('error') {
           steps {
-            git 'https://github.com/cpsbatthoutlook/test-pipeline.git'
+            git 'https://github.com/cpsbatthoutlook/blue-ocean-demo.git'
           }
         }
         stage('f1-branch') {
           steps {
-            git(url: 'https://github.com/cpsbatthoutlook/test-pipeline.git', branch: 'f1-branch')
+            git(url: 'https://github.com/cpsbatthoutlook/blue-ocean-demo.git', branch: 'f1-branch')
           }
         }
+      }
+    }
+    stage('build') {
+      steps {
+        tool 'gradle441'
+        sh 'gradle build'
       }
     }
   }
