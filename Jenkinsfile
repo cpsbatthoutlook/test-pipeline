@@ -7,8 +7,17 @@ pipeline {
   }
   stages {
     stage('error') {
-      steps {
-        git 'https://github.com/cpsbatthoutlook/test-pipeline.git'
+      parallel {
+        stage('error') {
+          steps {
+            git 'https://github.com/cpsbatthoutlook/test-pipeline.git'
+          }
+        }
+        stage('f1-branch') {
+          steps {
+            git(url: 'https://github.com/cpsbatthoutlook/test-pipeline.git', branch: 'f1-branch')
+          }
+        }
       }
     }
   }
