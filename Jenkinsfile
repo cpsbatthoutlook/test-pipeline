@@ -7,17 +7,8 @@ pipeline {
   }
   stages {
     stage('error') {
-      parallel {
-        stage('error') {
-          steps {
-            git 'https://github.com/cpsbatthoutlook/blue-ocean-demo.git'
-          }
-        }
-        stage('f1-branch') {
-          steps {
-            git(url: 'https://github.com/cpsbatthoutlook/blue-ocean-demo.git', branch: 'f1-branch')
-          }
-        }
+      steps {
+        git 'https://github.com/cpsbatthoutlook/blue-ocean-demo.git'
       }
     }
     stage('build') {
