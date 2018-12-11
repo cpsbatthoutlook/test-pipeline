@@ -1,12 +1,12 @@
 pipeline {
   agent {
     node {
-      label 'worker-node1'
+      label 'jnode1'
     }
 
   }
   stages {
-    stage('') {
+    stage('error') {
       steps {
         git 'https://github.com/cpsbatthoutlook/test-pipeline.git'
       }
