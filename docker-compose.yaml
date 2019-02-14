@@ -1,0 +1,50 @@
+version: "3"
+
+services:
+  ansmaster:
+    image: cpsbatthoutlook/centosansible:v0.0.3
+    container_name: ansmaster
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/sh
+    networks:
+      - front-tier
+
+  ansnode1:
+    image: centos
+    container_name: ansnode1
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/sh
+    networks:
+      - front-tier
+
+  ansnode2:
+    image: centos
+    container_name: ansnode2
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/sh
+    networks:
+      - front-tier
+
+  ansnode3:
+    image: centos
+    container_name: ansnode3
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/sh
+    networks:
+      - front-tier
+
+  ansnode4:
+    image: centos
+    container_name: ansnode4
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/sh
+    networks:
+      - front-tier
+
+networks:
+  front-tier:
